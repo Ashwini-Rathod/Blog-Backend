@@ -11,4 +11,21 @@ const getAllBlogs = (req, res, next)=>{
     })
 }
 
+const getBlogById = (req, res, next)=>{
+    let blogFound = blogs.find((blog)=>{
+        return blog.id == req.params.id;
+    })
+    if(!blogFound){
+        res.status(404).json({
+            status: "Unsuccessful",
+            message: "Blog with the entered ID does not exists",
+        })
+    }
+    res.status(200).json({
+        status: "Successful",
+        data: blogFound,
+    })
+}
+
 module.exports.getAllBlogs = getAllBlogs;
+module.exports.getBlogById = getBlogById;
