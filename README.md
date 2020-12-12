@@ -2,7 +2,7 @@
 
 This project is about creating a simple express server application that serves blog data. The data is stored in a json file on the local machine. The data is served on local host on port number 3000. This will serve as an base URL for this project. For performing certain operations, api endpoints are created.
 
-#The api end-points supports the following operations:
+# The api end-points supports the following operations:
 
 Get all the blogs:
 The api endpoint is designed to get all the blogs present in the json file. The api endpoint for this particular operation is : http://localhost:3000/blogs. Here, '/blogs' is an api endpoint for obtaining all the blogs present in the json file stored locally.
