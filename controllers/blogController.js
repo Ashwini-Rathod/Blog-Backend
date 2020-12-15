@@ -5,9 +5,20 @@ const blogs = JSON.parse(fs.readFileSync(blogFile, "utf-8"));
 
 
 const getAllBlogs = (req, res, next)=>{
-    res.status(200).json({
+    let blogData = blogs.filter((blog)=>{
+        return Object.keys(req.query).every((property)=>{
+            return blog[property] == req.query[property];
+        })
+    })
+    if(blogData.length == 0){
+        res.status(404).json({
+            status: "Unsuccessful",
+            message: "Invalid query parameter",
+        })
+    }
+        res.status(200).json({
         status: "Successful",
-        data: [blogs],
+        data: [blogData],
     })
 }
 
