@@ -56,5 +56,6 @@ const getBlogById = (req, res, next)=>{
     })
 }
 
+
 module.exports.getAllBlogs = getAllBlogs;
 module.exports.getBlogById = getBlogById;
